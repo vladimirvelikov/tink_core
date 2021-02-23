@@ -11,8 +11,8 @@ private typedef AnnexableTo<T> =
 class Annex<Target> {
   
   var target:Target;
-  var registry:Map<Dynamic, Dynamic>;
-  
+  var registry:Map<Class<Dynamic>, Dynamic>;
+
   public function new(target:Target) {
   	this.target = target;
     this.registry = cast new haxe.ds.ObjectMap();
