@@ -39,7 +39,7 @@ class Callbacks extends Base {
   }
   #end
   
-  #if (haxe_ver != 4.2) // see https://github.com/HaxeFoundation/haxe/issues/10137
+  #if (haxe_ver < 4.2) // see https://github.com/HaxeFoundation/haxe/issues/10137
   public function testIgnore() {
     var calls = 0;
     var cbNoise:Callback<Noise> = function () calls++;
