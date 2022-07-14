@@ -17,13 +17,15 @@ class TypedError<T> {
   
   function new(?code:ErrorCode, message, ?pos:Pos):Void;
   
+  function throwSelf():Dynamic;
+  
   static function withData(?code:ErrorCode, message:String, data:Dynamic, ?pos:Pos):Error;
   static function typed<A>(?code:ErrorCode, message:String, data:A, ?pos:Pos):TypedError<A>;
   static function catchExceptions<A>(f:Void->A, ?report:Dynamic->Error, ?pos:Pos):Outcome<A, Error>;
 }
 ```
 
-Most of the time you will just be dealing with `Error`, where `data` is simply `Dynamic`. In a very select cases you may wish to created typed errors where the type of the error's data is well defined.
+Most of the time you will just be dealing with `Error`, where `data` is simply `Dynamic`. In a very select cases you may wish to create typed errors where the type of the error's data is well defined.
 
 The `Pos` type is just a typedef that will be `haxe.macro.Expr.Position` in the macro context and `haxe.PosInfos` otherwise.
 
