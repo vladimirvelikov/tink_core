@@ -173,7 +173,7 @@ Let's examine a naive implementation of `map`:
 function map<In, Out>(future:Future<In>, transform:In->Out):Future<Out>
   return new Future(
     function (callback:Callback<Out>):CallbackLink
-      return f.handle(
+      return future.handle(
         function (data:In) callback.invoke(transform(data))
       )
   )
