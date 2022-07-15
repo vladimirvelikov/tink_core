@@ -12,7 +12,7 @@ abstract Lazy<T> {
 }
 ```
 
-Notice it defines `map` and `flatMap` functions that allows you to transform one lazy value to another. It is important to understand that the final value is not computed until you call `get` as shown in [this example](http://try.haxe.org/#67EA8):
+Notice it defines `map` and `flatMap` functions that allows you to transform one lazy value to another. It is important to understand that the final value is not computed until you call `get` as shown in [this example](https://try.haxe.org/#582F5f53):
 
 ```haxe
 using tink.CoreApi;
